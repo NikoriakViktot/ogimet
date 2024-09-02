@@ -5,7 +5,6 @@ import pandas as pd
 import io
 from fake_useragent import UserAgent
 
-
 from .class_metedecode import TelegramMeteoDecoder
 
 def get_user_agent():
@@ -122,7 +121,7 @@ class TelegramProcessor:
     request_link = 'http://www.ogimet.com/cgi-bin/getsynop'
     def __init__(self, stations_list, start_date=None, end_date=None):
             self.stations_list = stations_list
-            self.start_date = start_date if start_date is not None else datetime.now() - timedelta(days=4)
+            self.start_date = start_date if start_date is not None else datetime.now() - timedelta(days=3)
             self.end_date = end_date if end_date is not None else datetime.now()
             self.decoder = TelegramMeteoDecoder()
 
